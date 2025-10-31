@@ -31,6 +31,11 @@ jobs:
           echo "Running flake8 linting..."
           flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=88 --statistics
+        
+      - name: Run tests (temporarily skipped)
+        run: |
+          echo "Skipping pytest for legacy code..."
+          echo "Tests exist under ./tests but are disabled in CI until modernization."
 
       - name: Build ROS2 Package
         run: |
